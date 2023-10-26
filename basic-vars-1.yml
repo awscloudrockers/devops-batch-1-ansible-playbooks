@@ -1,0 +1,11 @@
+---
+ - hosts: all
+   user: root
+   become: yes
+   become_method: sudo
+   vars:
+    test: "This is a variable section example"
+   tasks:
+   - name: this is the vars example
+     debug:
+      msg: "{{ test }}"
