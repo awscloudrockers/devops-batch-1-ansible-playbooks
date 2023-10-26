@@ -1,0 +1,14 @@
+---
+ - hosts: all
+   user: root
+   become: yes
+   become_method: sudo
+   tasks:
+   - name: 1. first task install some packages
+     yum: name=python3 state=latest
+   - name: 2. second task install httpd
+     yum: name=httpd state=present
+   - name: 3. third task change the mode
+     file: dest=/var/www/html mode=777
+   - name: 4. verify changes
+     shell: ls -al /var/www/html
