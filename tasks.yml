@@ -12,3 +12,5 @@
      file: dest=/var/www/html mode=777
    - name: 4. verify changes
      shell: ls -al /var/www/html
+   - name: 5. fifth task
+     service: name=httpd state=restarted
