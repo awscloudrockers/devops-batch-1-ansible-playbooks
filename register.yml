@@ -1,0 +1,12 @@
+---
+ - hosts: all
+   user: root
+   become: yes
+   become_method: sudo
+   tasks:
+    - name: list the out of the below command
+      command: systemctl restart httpd 
+      register: output
+    - name: display the out of above command
+      debug:
+        msg: "{{ output }}"

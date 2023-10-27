@@ -1,0 +1,13 @@
+---
+ - hosts: localhost
+   tasks:    
+   - name: "Exec items"
+     shell: "{{ item }}"
+     with_items:
+       - echo "hello"
+       - echo "hello2"- name: "Exec items"
+     shell: "{{ item }}"
+     with_items:
+       - echo "hello"
+       - echo "hello2"
+       
