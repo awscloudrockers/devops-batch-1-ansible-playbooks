@@ -1,0 +1,10 @@
+---
+    - name: running from task4 playbook
+      yum: name=python3 state=latest
+    - name: running from task4 playbook
+      command: systemctl status docker
+      register: output
+    - name: display the out of above command
+      debug:
+        msg: "{{ output }}"
+  

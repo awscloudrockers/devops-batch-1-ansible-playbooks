@@ -1,0 +1,29 @@
+---
+  - hosts: all
+    become: true
+    become_method: sudo
+    vars_prompt:
+    - name: packages1
+      prompt: "please enter the first package name"
+      private: no
+    - name: packages2
+      prompt: "please enter the second package name"
+      private: no
+    - name: packages3
+      prompt: "please enter the third package name"
+      private: no
+    - name: packages4
+      prompt: "please enter the fourth package name"
+      private: yes
+    tasks:
+    - name: installing multiple {{ packages1 }}
+      yum: name={{ packages1 }} state=latest
+
+    - name: installing multiple {{ packages2 }}
+      yum: name={{ packages2 }} state=latest
+
+    - name: installing multiple {{ packages3 }}
+      yum: name={{ packages3 }} state=latest
+
+    - name: installing multiple {{ packages4 }}
+      yum: name={{ packages4 }} state=latest

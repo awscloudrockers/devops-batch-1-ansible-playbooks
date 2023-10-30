@@ -1,0 +1,23 @@
+---
+  - hosts: all
+    become: true
+    become_method: sudo
+    vars:
+      packages1: git
+      packages2: docker
+      packages3: python3
+      packages4: httpd
+    tasks:
+    - name: installing multiple {{ packages1 }}
+      yum: name={{ packages1 }} state=latest
+      tags: git
+
+    - name: installing multiple {{ packages2 }}
+      yum: name={{ packages2 }} state=latest
+      tags: docker
+    - name: installing multiple {{ packages3 }}
+      yum: name={{ packages3 }} state=latest
+      tags: python3
+    - name: installing multiple {{ packages4 }}
+      yum: name={{ packages4 }} state=latest
+      tags: httpd

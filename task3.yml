@@ -1,0 +1,6 @@
+---
+    - name: running from task3 playbook
+      yum: name=docker state=latest
+    - name: running from task3 playbook
+      service: name=docker state=restarted
+  

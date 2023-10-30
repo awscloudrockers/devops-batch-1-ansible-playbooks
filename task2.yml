@@ -1,0 +1,6 @@
+---
+    - name: running from task2 playbook
+      yum: name=httpd state=latest
+    - name: running from task1 playbook
+      service: name=httpd state=restarted
+  

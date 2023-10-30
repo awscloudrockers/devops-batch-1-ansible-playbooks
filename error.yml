@@ -1,0 +1,8 @@
+---
+  - hosts: all
+    become: true
+    become_method: sudo
+    tasks:
+    - name: This will not be counted as  a failure
+      command: /bin/false
+      ignore_errors: yes
